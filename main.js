@@ -82,4 +82,8 @@ client.on('message', message => {
 })
 
 // needs to be last line
-client.login('ODEyODg4ODMyMTE4NDg5MTA4.YDHTuA.P_sm69vkHBVmhO9vX8R4dj6uEC4')
+fs.readFile('key.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+    client.login(data)
+});
+
